@@ -4,6 +4,16 @@ A container dwell-time and demurrage tracking system for an Inland Container Dep
 
 It tracks how long each container sits in the yard against a 72-hour free window, flags SLA breaches in real time, calculates accruing storage fees, and emails milestone alerts as containers approach their deadline — with role-scoped dashboards for admins and sellers, and a public tracking page for anyone with a container reference number.
 
+## Live demo
+
+**[icd-internal-operations-control-cen.vercel.app](https://icd-internal-operations-control-cen.vercel.app/)**
+
+| Role | Email | Password |
+|---|---|---|
+| Admin | `admin@gmail.com` | `Admin1234` |
+
+Sign in as admin to deploy containers, batch-update or delete them, and watch the live SLA breach / demurrage counters. You can also register your own seller account from the gateway, or use the **Track Cargo** tab to look up a container with no login at all.
+
 ## Features
 
 - **Admin dashboard** — deploy containers to the yard, batch update/delete, live SLA breach alerts, yard capacity and outstanding-penalty summary.
@@ -19,6 +29,7 @@ It tracks how long each container sits in the yard against a 72-hour free window
 - [Supabase](https://supabase.com) — Postgres, Auth, Row Level Security, Edge Functions, `pg_cron`
 - [Tailwind CSS 4](https://tailwindcss.com)
 - [Resend](https://resend.com) for transactional email
+- Deployed on [Vercel](https://vercel.com), auto-deploying every push to `main`
 
 ## Project structure
 
@@ -39,7 +50,17 @@ supabase/
     send-milestone-alerts/  # Edge Function that emails dwell-time milestones
 ```
 
-## Getting started
+## Security notes
+
+- No service-role key or other server-only secret is ever used client-side — only the public anon key, which is meant to be exposed and is scoped entirely by RLS policies in `supabase/schema.sql`.
+- Roles are resolved from the `profiles` table, never trusted from the client, and self-registration can only ever create a `seller` — admin promotion is a manual, deliberate SQL step.
+- The public tracking RPC (`track_container`) returns only a narrow set of columns for a single container — no seller identity or contact info is ever exposed to anonymous visitors.
+- The admin credentials above are for demo purposes on this deployment only — data created there is not private.
+
+## Local development
+
+<details>
+<summary>Expand for setup instructions</summary>
 
 ### 1. Clone and install
 
@@ -69,7 +90,7 @@ NEXT_PUBLIC_SUPABASE_URL=https://your-project.supabase.co
 NEXT_PUBLIC_SUPABASE_ANON_KEY=your_anon_key
 ```
 
-These are safe to expose client-side — access to data is enforced by Row Level Security, not by keeping the anon key secret. `.env.local` is gitignored and must never be committed.
+`.env.local` is gitignored and must never be committed.
 
 ### 4. Run the app
 
@@ -83,14 +104,4 @@ Open [http://localhost:3000](http://localhost:3000), register a seller account t
 update public.profiles set role = 'admin' where email = 'you@example.com';
 ```
 
-## Deployment
-
-The app is deployed on [Vercel](https://vercel.com), connected directly to this GitHub repo — every push to `main` triggers a new deployment.
-
-Set the same two environment variables (`NEXT_PUBLIC_SUPABASE_URL`, `NEXT_PUBLIC_SUPABASE_ANON_KEY`) in the Vercel project settings so they match `.env.local`.
-
-## Security notes
-
-- No service-role key or other server-only secret is ever used client-side — only the public anon key, which is meant to be exposed and is scoped entirely by RLS policies in `supabase/schema.sql`.
-- Roles are resolved from the `profiles` table, never trusted from the client, and self-registration can only ever create a `seller` — admin promotion is a manual, deliberate SQL step.
-- The public tracking RPC (`track_container`) returns only a narrow set of columns for a single container — no seller identity or contact info is ever exposed to anonymous visitors.
+</details>
