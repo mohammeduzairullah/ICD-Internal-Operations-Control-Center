@@ -249,8 +249,8 @@ export default function AdminDashboard() {
     return (
       <main className="min-h-screen bg-gradient-to-tr from-blue-50 via-white to-cyan-50 flex items-center justify-center p-6 relative overflow-hidden">
         <div className="absolute top-1/4 left-1/4 w-80 h-80 bg-cyan-300/20 blur-[100px] rounded-full animate-pulse pointer-events-none"></div>
-        <div className="max-w-md w-full bg-white/80 backdrop-blur-3xl border border-slate-200 rounded-3xl p-8 shadow-xl shadow-slate-300/40 relative">
-          <div className="absolute top-0 left-0 right-0 h-[3px] bg-gradient-to-r from-cyan-500 to-indigo-500 rounded-t-3xl"></div>
+        <div className="max-w-md w-full bg-white/80 backdrop-blur-3xl border border-slate-200 rounded-3xl p-8 shadow-xl shadow-slate-300/40 relative overflow-hidden">
+          <div className="absolute top-0 left-0 right-0 h-[3px] bg-gradient-to-r from-cyan-500 to-indigo-500"></div>
           <div className="text-center mb-8">
             <div className="inline-flex items-center justify-center w-12 h-12 rounded-xl bg-slate-50 border border-slate-200 text-cyan-600 font-mono text-xl font-bold mb-3 shadow-inner">
               Ω

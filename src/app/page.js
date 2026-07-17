@@ -102,10 +102,10 @@ export default function HomeGateway() {
       <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-indigo-300/20 blur-[120px] rounded-full animate-[pulse_8s_ease-in-out_infinite_1.5s] pointer-events-none"></div>
 
       {/* Control Module Card Structure */}
-      <div className="max-w-md w-full bg-white/80 backdrop-blur-3xl border border-slate-200 rounded-3xl p-8 shadow-xl shadow-slate-300/40 relative z-10 hover:border-cyan-300 hover:shadow-2xl hover:shadow-cyan-200/40 transition-all duration-500">
+      <div className="max-w-md w-full bg-white/80 backdrop-blur-3xl border border-slate-200 rounded-3xl p-8 shadow-xl shadow-slate-300/40 relative z-10 hover:border-cyan-300 hover:shadow-2xl hover:shadow-cyan-200/40 transition-all duration-500 overflow-hidden">
 
         {/* Shimmer Border Accent Top */}
-        <div className="absolute top-0 left-0 right-0 h-[3px] bg-gradient-to-r from-cyan-500 via-indigo-500 to-blue-500 rounded-t-3xl"></div>
+        <div className="absolute top-0 left-0 right-0 h-[3px] bg-gradient-to-r from-cyan-500 via-indigo-500 to-blue-500"></div>
 
         {/* 3-Tab Operational Segmentation Selector */}
         <div className="grid grid-cols-3 border border-slate-200 bg-slate-100 p-1.5 rounded-2xl mb-8 font-mono text-[10px] font-bold tracking-wider">
