@@ -1,6 +1,6 @@
 # 📦 Project Titan — ICD Internal Operations Control Center
 
-A full-stack container dwell-time and demurrage tracking system built for an Inland Container Depot (ICD), developed end-to-end as a **solo project** — database design, access control, frontend, and deployment all handled independently.
+A full-stack container dwell-time and demurrage tracking system built for an Inland Container Depot (ICD), developed end-to-end as a **solo project** where I served as both **Project Manager** and **Full-Stack Developer** — from requirement scoping and architecture decisions through database design, access control, frontend, and deployment.
 
 It tracks how long each container sits in the yard against a 72-hour free window, flags SLA breaches in real time, calculates accruing storage fees, and emails milestone alerts as containers approach their deadline — with role-scoped dashboards for admins and sellers, and a public tracking page for anyone with a container reference number.
 
@@ -34,11 +34,22 @@ Sign in as admin to deploy containers, batch-update or delete them, and watch th
 
 ---
 
-# 👨‍💻 My Role
+# 👨‍💼 My Roles
 
-Built entirely solo — no team, no template.
+This project was completed entirely by me without any team members.
 
-**Full-Stack Developer**
+## Project Manager
+
+Responsibilities:
+
+- Requirement scoping (defining Admin / Seller / Anonymous user needs before writing code — see the [Product Requirements Document](docs/PRD.md))
+- Architecture decisions (choosing Supabase over a hand-rolled backend, weighing build speed against control)
+- Risk management (identifying privilege-escalation risk in self-registration and closing it at the database layer, not just in the UI)
+- Feature prioritization (MVP vs. nice-to-have — see the PRD)
+- Technical documentation (database design, system architecture, API specs — see [Project Documentation](#-project-documentation) below)
+- Release planning (staged rollout: schema → auth/RLS → dashboards → theming → public documentation)
+
+## Full-Stack Developer
 
 Responsibilities:
 
@@ -106,6 +117,19 @@ The app shipped with a dark theme; switching to a bright light theme across thre
 
 ---
 
+# 📂 Project Documentation
+
+Technical decisions are documented separately from this README so they can be reviewed on their own:
+
+| Document | Purpose |
+|---|---|
+| [Database Schema & RLS Security Design](docs/DATABASE_DESIGN.md) | ER structure, table definitions, the exact RLS policies, and how `is_admin()` avoids recursive lookups |
+| [System Architecture & Automation Flow](docs/SYSTEM_ARCHITECTURE.md) | The end-to-end alert pipeline (`pg_cron` → Edge Function → Resend) and the live demurrage engine's formula |
+| [API & RPC Specification](docs/API_SPECIFICATION.md) | The `track_container` public RPC contract and the Next.js middleware routing/role-gating logic |
+| [Product Requirements Document](docs/PRD.md) | User roles, MVP vs. nice-to-have features, and the scoping decisions behind them |
+
+---
+
 # 📁 Repository Structure
 
 ```
@@ -162,9 +186,12 @@ Shipped a production-deployed, database-secured, multi-role full-stack applicati
 
 ## Mohammed Uzairullah
 
-**Role Performed:** Full-Stack Developer (solo)
+**Roles Performed**
 
-This repository demonstrates my ability to independently design, build, secure, and deploy a production full-stack application — from database schema and access control to UI and CI/CD.
+- Project Manager
+- Full-Stack Developer
+
+This repository demonstrates my ability to independently scope, architect, build, secure, document, and deploy a production full-stack application — from requirements and database design to access control, UI, and CI/CD.
 
 ---
 
