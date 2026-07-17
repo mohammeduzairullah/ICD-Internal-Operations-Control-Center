@@ -6,9 +6,9 @@ const ToastContext = createContext(null);
 let idCounter = 0;
 
 const TONE_CLASSES = {
-  error: 'bg-rose-950/90 border-rose-800 text-rose-200',
-  success: 'bg-emerald-950/90 border-emerald-800 text-emerald-200',
-  info: 'bg-slate-900/90 border-slate-700 text-slate-200',
+  error: 'bg-white/95 border-rose-200 border-l-4 border-l-rose-500 text-rose-700',
+  success: 'bg-white/95 border-emerald-200 border-l-4 border-l-emerald-500 text-emerald-700',
+  info: 'bg-white/95 border-slate-200 border-l-4 border-l-indigo-500 text-slate-700',
 };
 
 export function ToastProvider({ children }) {
@@ -37,7 +37,7 @@ export function ToastProvider({ children }) {
             key={t.id}
             role="status"
             onClick={() => dismiss(t.id)}
-            className={`pointer-events-auto max-w-sm w-full sm:w-auto cursor-pointer font-mono text-xs px-4 py-3 rounded-xl border shadow-2xl backdrop-blur-xl transition-all ${TONE_CLASSES[t.type] || TONE_CLASSES.info}`}
+            className={`pointer-events-auto max-w-sm w-full sm:w-auto cursor-pointer font-mono text-xs px-4 py-3 rounded-xl border shadow-xl shadow-slate-300/40 backdrop-blur-xl transition-all hover:-translate-y-0.5 ${TONE_CLASSES[t.type] || TONE_CLASSES.info}`}
             style={{ animation: 'slideIn 0.25s ease-out' }}
           >
             {t.message}

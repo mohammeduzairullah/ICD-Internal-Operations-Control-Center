@@ -239,56 +239,56 @@ export default function AdminDashboard() {
 
   if (checkingSession) {
     return (
-      <main className="min-h-screen bg-gradient-to-tr from-slate-950 via-slate-900 to-blue-950 flex items-center justify-center">
-        <div className="w-2 h-2 rounded-full bg-cyan-400 animate-ping"></div>
+      <main className="min-h-screen bg-gradient-to-tr from-blue-50 via-white to-cyan-50 flex items-center justify-center">
+        <div className="w-2 h-2 rounded-full bg-cyan-500 animate-ping"></div>
       </main>
     );
   }
 
   if (!profile) {
     return (
-      <main className="min-h-screen bg-gradient-to-tr from-slate-950 via-slate-900 to-blue-950 flex items-center justify-center p-6 relative overflow-hidden">
-        <div className="absolute top-1/4 left-1/4 w-80 h-80 bg-cyan-500/10 blur-[100px] rounded-full animate-pulse pointer-events-none"></div>
-        <div className="max-w-md w-full bg-slate-900/70 backdrop-blur-3xl border border-slate-700/60 rounded-3xl p-8 shadow-[0_0_50px_rgba(6,182,212,0.1)] relative">
+      <main className="min-h-screen bg-gradient-to-tr from-blue-50 via-white to-cyan-50 flex items-center justify-center p-6 relative overflow-hidden">
+        <div className="absolute top-1/4 left-1/4 w-80 h-80 bg-cyan-300/20 blur-[100px] rounded-full animate-pulse pointer-events-none"></div>
+        <div className="max-w-md w-full bg-white/80 backdrop-blur-3xl border border-slate-200 rounded-3xl p-8 shadow-xl shadow-slate-300/40 relative">
           <div className="absolute top-0 left-0 right-0 h-[3px] bg-gradient-to-r from-cyan-500 to-indigo-500 rounded-t-3xl"></div>
           <div className="text-center mb-8">
-            <div className="inline-flex items-center justify-center w-12 h-12 rounded-xl bg-slate-950 border border-slate-800 text-cyan-400 font-mono text-xl font-bold mb-3 shadow-inner">
+            <div className="inline-flex items-center justify-center w-12 h-12 rounded-xl bg-slate-50 border border-slate-200 text-cyan-600 font-mono text-xl font-bold mb-3 shadow-inner">
               Ω
             </div>
-            <h1 className="text-xl font-black tracking-[0.25em] text-white uppercase">Project Titan</h1>
-            <p className="text-slate-400 text-[10px] tracking-widest uppercase font-mono mt-1.5 flex items-center justify-center gap-2">
-              <span className="w-1.5 h-1.5 rounded-full bg-cyan-400 inline-block animate-pulse"></span>
+            <h1 className="text-xl font-black tracking-[0.25em] text-slate-900 uppercase">Project Titan</h1>
+            <p className="text-slate-500 text-[10px] tracking-widest uppercase font-mono mt-1.5 flex items-center justify-center gap-2">
+              <span className="w-1.5 h-1.5 rounded-full bg-cyan-500 inline-block animate-pulse"></span>
               Identity Core Authorization
             </p>
           </div>
 
           <form onSubmit={handleLogin} className="space-y-4">
             <div>
-              <label className="block text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-1.5 font-mono">Clerk Email Address</label>
+              <label className="block text-[10px] font-bold text-slate-500 uppercase tracking-widest mb-1.5 font-mono">Clerk Email Address</label>
               <input
                 type="email"
                 placeholder="clerk@terminal.com"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 required
-                className="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-cyan-400 font-mono transition-all focus:ring-4 focus:ring-cyan-500/5 shadow-inner placeholder:text-slate-700"
+                className="w-full bg-white border border-slate-200 rounded-xl px-4 py-3 text-sm text-slate-900 focus:outline-none focus:border-cyan-500 font-mono transition-all focus:ring-4 focus:ring-cyan-500/10 shadow-sm placeholder:text-slate-400"
               />
             </div>
             <div>
-              <label className="block text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-1.5 font-mono">Security Access Key</label>
+              <label className="block text-[10px] font-bold text-slate-500 uppercase tracking-widest mb-1.5 font-mono">Security Access Key</label>
               <input
                 type="password"
                 placeholder="••••••••••••"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
                 required
-                className="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-cyan-400 font-mono transition-all focus:ring-4 focus:ring-cyan-500/5 shadow-inner placeholder:text-slate-700"
+                className="w-full bg-white border border-slate-200 rounded-xl px-4 py-3 text-sm text-slate-900 focus:outline-none focus:border-cyan-500 font-mono transition-all focus:ring-4 focus:ring-cyan-500/10 shadow-sm placeholder:text-slate-400"
               />
             </div>
             <button
               type="submit"
               disabled={authLoading}
-              className="w-full bg-gradient-to-r from-cyan-500 via-indigo-500 to-blue-600 hover:opacity-95 text-slate-950 font-black py-3.5 rounded-xl transition-all font-mono text-xs uppercase tracking-widest mt-2 active:scale-[0.98] shadow-lg shadow-cyan-500/10 disabled:opacity-50"
+              className="w-full bg-gradient-to-r from-cyan-500 via-indigo-500 to-blue-600 hover:opacity-95 hover:shadow-lg hover:shadow-cyan-500/25 text-white font-black py-3.5 rounded-xl transition-all font-mono text-xs uppercase tracking-widest mt-2 active:scale-[0.98] shadow-md shadow-cyan-500/20 disabled:opacity-50"
             >
               {authLoading ? 'Verifying Credentials...' : 'Authorize Secure Session'}
             </button>
@@ -299,10 +299,10 @@ export default function AdminDashboard() {
   }
 
   return (
-    <main className="min-h-screen bg-gradient-to-tr from-slate-950 via-slate-900 to-blue-950 text-slate-100 p-8 font-sans relative overflow-hidden selection:bg-cyan-500/30">
+    <main className="min-h-screen bg-gradient-to-tr from-blue-50 via-white to-cyan-50 text-slate-900 p-8 font-sans relative overflow-hidden selection:bg-cyan-500/30">
 
-      <div className="absolute top-0 right-1/4 w-[500px] h-[500px] bg-indigo-500/5 blur-[120px] rounded-full pointer-events-none animate-[pulse_8s_ease-in-out_infinite]"></div>
-      <div className="absolute bottom-0 left-1/4 w-[400px] h-[400px] bg-cyan-500/5 blur-[100px] rounded-full pointer-events-none animate-[pulse_6s_ease-in-out_infinite_2s]"></div>
+      <div className="absolute top-0 right-1/4 w-[500px] h-[500px] bg-indigo-300/15 blur-[120px] rounded-full pointer-events-none animate-[pulse_8s_ease-in-out_infinite]"></div>
+      <div className="absolute bottom-0 left-1/4 w-[400px] h-[400px] bg-cyan-300/15 blur-[100px] rounded-full pointer-events-none animate-[pulse_6s_ease-in-out_infinite_2s]"></div>
 
       <ConfirmModal
         open={confirmDelete}
@@ -316,26 +316,26 @@ export default function AdminDashboard() {
 
       <div className="max-w-7xl mx-auto relative z-10 space-y-6">
 
-        <div className="flex flex-col md:flex-row justify-between items-start md:items-center border-b border-slate-800/80 pb-6 gap-4">
+        <div className="flex flex-col md:flex-row justify-between items-start md:items-center border-b border-slate-200 pb-6 gap-4">
           <div>
-            <h1 className="text-3xl font-black tracking-wider uppercase bg-clip-text text-transparent bg-gradient-to-r from-white via-slate-200 to-slate-400">Project Titan</h1>
-            <p className="text-xs font-mono text-cyan-400 uppercase tracking-widest mt-1">ICD Internal Operations Control Center</p>
+            <h1 className="text-3xl font-black tracking-wider uppercase bg-clip-text text-transparent bg-gradient-to-r from-slate-900 via-slate-700 to-slate-500">Project Titan</h1>
+            <p className="text-xs font-mono text-cyan-600 uppercase tracking-widest mt-1">ICD Internal Operations Control Center</p>
           </div>
 
           <div className="flex flex-wrap items-center gap-4">
-            <div className="bg-slate-900/80 px-4 py-2 rounded-xl border border-slate-800 flex items-center gap-4 shadow-md">
-              <span className="text-xs text-emerald-400 font-mono flex items-center gap-1.5">
+            <div className="bg-white px-4 py-2 rounded-xl border border-slate-200 flex items-center gap-4 shadow-sm">
+              <span className="text-xs text-emerald-600 font-mono flex items-center gap-1.5">
                 <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
                 {profile.email}
               </span>
-              <button onClick={handleLogout} className="bg-rose-950/40 hover:bg-rose-900 text-rose-200 text-[10px] uppercase font-mono tracking-wider px-3 py-1.5 rounded-lg border border-rose-800/60 transition-all">
+              <button onClick={handleLogout} className="bg-rose-50 hover:bg-rose-100 text-rose-600 text-[10px] uppercase font-mono tracking-wider px-3 py-1.5 rounded-lg border border-rose-200 transition-all">
                 Log Out Session
               </button>
             </div>
 
-            <div className="bg-slate-900/80 px-4 py-2 rounded-xl border border-slate-800 min-w-[140px] text-center shadow-md">
-              <span className="text-[9px] text-slate-500 block uppercase tracking-widest font-mono font-bold">Live System Time</span>
-              <span className="text-base font-mono text-cyan-400 font-bold">
+            <div className="bg-white px-4 py-2 rounded-xl border border-slate-200 min-w-[140px] text-center shadow-sm">
+              <span className="text-[9px] text-slate-400 block uppercase tracking-widest font-mono font-bold">Live System Time</span>
+              <span className="text-base font-mono text-cyan-600 font-bold">
                 {mounted ? time.toLocaleTimeString() : '--:--:--'}
               </span>
             </div>
@@ -345,11 +345,11 @@ export default function AdminDashboard() {
         {alerts.length > 0 && (
           <div className="space-y-2">
             {alerts.map((alertItem) => (
-              <div key={alertItem.id} className="bg-rose-950/20 border border-rose-800/60 backdrop-blur-md rounded-xl p-3.5 flex justify-between items-center shadow-lg animate-pulse">
-                <span className="text-xs font-mono text-rose-400 flex items-center gap-2">
+              <div key={alertItem.id} className="bg-rose-50 border border-rose-200 backdrop-blur-md rounded-xl p-3.5 flex justify-between items-center shadow-md animate-pulse">
+                <span className="text-xs font-mono text-rose-700 flex items-center gap-2">
                   {alertItem.msg}
                 </span>
-                <span className="text-[10px] font-mono text-rose-500 bg-slate-950 px-2 py-1 rounded border border-rose-900/40">
+                <span className="text-[10px] font-mono text-rose-500 bg-white px-2 py-1 rounded border border-rose-200">
                   Logged at {alertItem.time}
                 </span>
               </div>
@@ -357,62 +357,62 @@ export default function AdminDashboard() {
           </div>
         )}
 
-        <div className="bg-slate-900/40 backdrop-blur-2xl border border-slate-800/80 p-6 rounded-2xl shadow-xl hover:border-slate-700/60 transition-all duration-300">
-          <h2 className="text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-4 font-mono">Manifest Inbound Cargo Row</h2>
+        <div className="bg-white/70 backdrop-blur-2xl border border-slate-200 p-6 rounded-2xl shadow-md hover:border-cyan-200 hover:shadow-lg transition-all duration-300">
+          <h2 className="text-[10px] font-bold text-slate-500 uppercase tracking-widest mb-4 font-mono">Manifest Inbound Cargo Row</h2>
           <form onSubmit={handleAddContainer} className="flex flex-wrap gap-4 items-end">
             <div className="flex-1 min-w-[180px]">
-              <label className="block text-[10px] text-slate-400 font-mono uppercase tracking-wider mb-1.5">Container Serial ID</label>
+              <label className="block text-[10px] text-slate-500 font-mono uppercase tracking-wider mb-1.5">Container Serial ID</label>
               <input
                 type="text"
                 placeholder="e.g. MSCU100088"
                 value={newContainerId}
                 onChange={(e) => setNewContainerId(e.target.value)}
-                className="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-2.5 text-sm uppercase text-white focus:outline-none focus:border-cyan-400 font-mono focus:ring-4 focus:ring-cyan-500/5 transition-all shadow-inner placeholder:text-slate-800"
+                className="w-full bg-white border border-slate-200 rounded-xl px-4 py-2.5 text-sm uppercase text-slate-900 focus:outline-none focus:border-cyan-500 font-mono focus:ring-4 focus:ring-cyan-500/10 transition-all shadow-sm placeholder:text-slate-400"
                 required
               />
             </div>
             <div className="flex-1 min-w-[220px]">
-              <label className="block text-[10px] text-slate-400 font-mono uppercase tracking-wider mb-1.5">Consignee Notification Email</label>
+              <label className="block text-[10px] text-slate-500 font-mono uppercase tracking-wider mb-1.5">Consignee Notification Email</label>
               <input
                 type="email"
                 placeholder="owner@company.com"
                 value={newOwnerEmail}
                 onChange={(e) => setNewOwnerEmail(e.target.value)}
-                className="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-2.5 text-sm text-white focus:outline-none focus:border-cyan-400 font-mono focus:ring-4 focus:ring-cyan-500/5 transition-all shadow-inner placeholder:text-slate-800"
+                className="w-full bg-white border border-slate-200 rounded-xl px-4 py-2.5 text-sm text-slate-900 focus:outline-none focus:border-cyan-500 font-mono focus:ring-4 focus:ring-cyan-500/10 transition-all shadow-sm placeholder:text-slate-400"
                 required
               />
             </div>
-            <button type="submit" disabled={addLoading} className="bg-gradient-to-r from-cyan-600 to-blue-600 hover:opacity-95 text-white text-xs font-mono font-bold uppercase tracking-widest h-[42px] px-6 rounded-xl transition-all active:scale-[0.98] shadow-lg shadow-cyan-500/5 disabled:opacity-50">
+            <button type="submit" disabled={addLoading} className="bg-gradient-to-r from-cyan-600 to-blue-600 hover:opacity-95 hover:shadow-lg hover:shadow-cyan-500/25 text-white text-xs font-mono font-bold uppercase tracking-widest h-[42px] px-6 rounded-xl transition-all active:scale-[0.98] shadow-md shadow-cyan-500/20 disabled:opacity-50">
               {addLoading ? 'Deploying…' : 'Deploy to Yard'}
             </button>
           </form>
         </div>
 
         {selectedIds.length > 0 && (
-          <div className="bg-slate-950/90 border border-cyan-800 p-4 rounded-xl flex flex-wrap items-center justify-between gap-4 shadow-[0_0_30px_rgba(6,182,212,0.1)] transition-all" style={{ animation: 'slideIn 0.2s ease-out' }}>
+          <div className="bg-white border border-cyan-200 p-4 rounded-xl flex flex-wrap items-center justify-between gap-4 shadow-lg shadow-cyan-200/30 transition-all" style={{ animation: 'slideIn 0.2s ease-out' }}>
             <div className="flex items-center gap-3">
               <span className="bg-gradient-to-r from-cyan-600 to-indigo-600 text-white font-mono font-bold text-[10px] px-2.5 py-1 rounded-md tracking-wider">
                 {selectedIds.length} SELECTED
               </span>
-              <span className="text-xs font-mono text-slate-300">Bulk configuration controls active</span>
+              <span className="text-xs font-mono text-slate-600">Bulk configuration controls active</span>
             </div>
             <div className="flex items-center gap-3">
-              <label className="text-[10px] font-mono uppercase tracking-wider text-slate-400">Set Group Status:</label>
+              <label className="text-[10px] font-mono uppercase tracking-wider text-slate-500">Set Group Status:</label>
               <select
                 onChange={(e) => {
                   if (e.target.value) handleBatchStatusChange(e.target.value);
                   e.target.value = "";
                 }}
                 defaultValue=""
-                className="bg-slate-900 border border-slate-800 text-xs font-mono text-white rounded-lg px-3 py-1.5 cursor-pointer focus:outline-none focus:border-cyan-400"
+                className="bg-white border border-slate-200 text-xs font-mono text-slate-900 rounded-lg px-3 py-1.5 cursor-pointer focus:outline-none focus:border-cyan-500"
               >
                 <option value="" disabled hidden>-- Choose Action --</option>
                 {STATUS_OPTIONS.map(opt => <option key={opt.value} value={opt.value}>{opt.label}</option>)}
               </select>
-              <div className="h-4 w-[1px] bg-slate-800 mx-1"></div>
+              <div className="h-4 w-[1px] bg-slate-200 mx-1"></div>
               <button
                 onClick={() => setConfirmDelete(true)}
-                className="bg-rose-950/60 hover:bg-rose-900 text-rose-200 border border-rose-800 font-mono text-[10px] uppercase tracking-wider px-4 py-1.5 rounded-lg transition-all"
+                className="bg-rose-50 hover:bg-rose-100 text-rose-600 border border-rose-200 font-mono text-[10px] uppercase tracking-wider px-4 py-1.5 rounded-lg transition-all"
               >
                 Delete Selected
               </button>
@@ -421,47 +421,47 @@ export default function AdminDashboard() {
         )}
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          <div className="bg-slate-900/40 border border-slate-800/80 p-5 rounded-2xl shadow-md">
-            <span className="text-[10px] text-slate-400 font-mono uppercase tracking-widest block font-bold mb-1.5">Yard Volumetric Load</span>
+          <div className="bg-white border border-slate-200 p-5 rounded-2xl shadow-sm hover:shadow-lg hover:-translate-y-0.5 transition-all duration-300">
+            <span className="text-[10px] text-slate-500 font-mono uppercase tracking-widest block font-bold mb-1.5">Yard Volumetric Load</span>
             <div className="flex justify-between items-baseline">
-              <span className="text-3xl font-mono font-black text-white">{activeInYard} <span className="text-xs text-slate-500 font-sans font-normal uppercase tracking-wider">Containers</span></span>
-              <span className="text-[10px] text-cyan-400 font-mono font-bold bg-cyan-950/60 px-2 py-0.5 rounded border border-cyan-900/60">
+              <span className="text-3xl font-mono font-black text-slate-900">{activeInYard} <span className="text-xs text-slate-400 font-sans font-normal uppercase tracking-wider">Containers</span></span>
+              <span className="text-[10px] text-cyan-700 font-mono font-bold bg-cyan-50 px-2 py-0.5 rounded border border-cyan-200">
                 {Math.round((activeInYard / yardCapacityLimit) * 100)}% Cap.
               </span>
             </div>
-            <div className="w-full bg-slate-950 h-1.5 rounded-full mt-4 overflow-hidden border border-slate-900">
+            <div className="w-full bg-slate-100 h-1.5 rounded-full mt-4 overflow-hidden border border-slate-200">
               <div className="bg-gradient-to-r from-cyan-500 to-indigo-500 h-full transition-all duration-500" style={{ width: `${(activeInYard / yardCapacityLimit) * 100}%` }}></div>
             </div>
           </div>
 
-          <div className="bg-slate-900/40 border border-slate-800/80 p-5 rounded-2xl shadow-md">
-            <span className="text-[10px] text-slate-400 font-mono uppercase tracking-widest block font-bold mb-1.5">Critical SLA Breaches</span>
-            <span className={`text-3xl font-mono font-black block transition-colors duration-500 ${totalActiveBreaches > 0 ? 'text-rose-400 animate-pulse' : 'text-emerald-400'}`}>
-              {totalActiveBreaches} <span className="text-xs font-sans font-normal text-slate-500 uppercase tracking-wider">Active</span>
+          <div className="bg-white border border-slate-200 p-5 rounded-2xl shadow-sm hover:shadow-lg hover:-translate-y-0.5 transition-all duration-300">
+            <span className="text-[10px] text-slate-500 font-mono uppercase tracking-widest block font-bold mb-1.5">Critical SLA Breaches</span>
+            <span className={`text-3xl font-mono font-black block transition-colors duration-500 ${totalActiveBreaches > 0 ? 'text-rose-600 animate-pulse' : 'text-emerald-600'}`}>
+              {totalActiveBreaches} <span className="text-xs font-sans font-normal text-slate-400 uppercase tracking-wider">Active</span>
             </span>
-            <p className="text-[10px] text-slate-500 mt-2.5 font-sans leading-relaxed">Containers exceeding maximum free terminal stay limit window.</p>
+            <p className="text-[10px] text-slate-400 mt-2.5 font-sans leading-relaxed">Containers exceeding maximum free terminal stay limit window.</p>
           </div>
 
-          <div className="bg-slate-900/40 border border-slate-800/80 p-5 rounded-2xl shadow-md">
-            <span className="text-[10px] text-slate-400 font-mono uppercase tracking-widest block font-bold mb-1.5">Total Outstanding Penalties</span>
-            <span className={`text-3xl font-mono font-black block transition-colors duration-500 ${totalAccumulatedDemurrage > 0 ? 'text-amber-400' : 'text-slate-400'}`}>
+          <div className="bg-white border border-slate-200 p-5 rounded-2xl shadow-sm hover:shadow-lg hover:-translate-y-0.5 transition-all duration-300">
+            <span className="text-[10px] text-slate-500 font-mono uppercase tracking-widest block font-bold mb-1.5">Total Outstanding Penalties</span>
+            <span className={`text-3xl font-mono font-black block transition-colors duration-500 ${totalAccumulatedDemurrage > 0 ? 'text-amber-600' : 'text-slate-400'}`}>
               ${totalAccumulatedDemurrage}.00
             </span>
-            <p className="text-[10px] text-slate-500 mt-2.5 font-sans leading-relaxed">Accumulated pool of active demurrage penalty assets generation.</p>
+            <p className="text-[10px] text-slate-400 mt-2.5 font-sans leading-relaxed">Accumulated pool of active demurrage penalty assets generation.</p>
           </div>
         </div>
 
-        <div className="bg-slate-900/40 rounded-2xl border border-slate-800 overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.5)]">
+        <div className="bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-lg shadow-slate-200/60">
           <div className="overflow-x-auto">
             <table className="w-full text-left border-collapse">
               <thead>
-                <tr className="bg-slate-950/80 border-b border-slate-800 text-slate-400 text-[10px] font-mono font-bold uppercase tracking-[0.15em]">
+                <tr className="bg-slate-50 border-b border-slate-200 text-slate-500 text-[10px] font-mono font-bold uppercase tracking-[0.15em]">
                   <th className="p-4 w-12 text-center">
                     <input
                       type="checkbox"
                       checked={containers.length > 0 && selectedIds.length === containers.length}
                       onChange={handleSelectAll}
-                      className="w-4 h-4 rounded border-slate-800 bg-slate-950 text-cyan-600 focus:ring-0 cursor-pointer accent-cyan-500"
+                      className="w-4 h-4 rounded border-slate-300 bg-white text-cyan-600 focus:ring-0 cursor-pointer accent-cyan-500"
                     />
                   </th>
                   <th className="p-4">Container ID</th>
@@ -476,23 +476,23 @@ export default function AdminDashboard() {
               ) : containers.length === 0 ? (
                 <tbody><tr><td colSpan={6}><EmptyState title="No containers in the yard" message="Deploy one above to get started." /></td></tr></tbody>
               ) : (
-                <tbody className="divide-y divide-slate-800/60 text-xs font-mono text-slate-300">
+                <tbody className="divide-y divide-slate-100 text-xs font-mono text-slate-600">
                   {containers.map((container) => {
                     const metrics = calculateContainerStatus(container.gate_in_time, container.gate_out_time);
                     const isChecked = selectedIds.includes(container.id);
 
                     return (
-                      <tr key={container.id} className={`transition-all duration-150 ${isChecked ? 'bg-cyan-950/10 hover:bg-cyan-950/20' : 'hover:bg-slate-950/30'}`}>
+                      <tr key={container.id} className={`transition-all duration-150 ${isChecked ? 'bg-cyan-50 hover:bg-cyan-100/60' : 'hover:bg-slate-50'}`}>
                         <td className="p-4 text-center">
                           <input
                             type="checkbox"
                             checked={isChecked}
                             onChange={() => handleSelectRow(container.id)}
-                            className="w-4 h-4 rounded border-slate-800 bg-slate-950 text-cyan-600 focus:ring-0 cursor-pointer accent-cyan-500"
+                            className="w-4 h-4 rounded border-slate-300 bg-white text-cyan-600 focus:ring-0 cursor-pointer accent-cyan-500"
                           />
                         </td>
-                        <td className="p-4 font-black text-white tracking-wider text-sm">{container.id}</td>
-                        <td className="p-4 text-slate-400">{container.owner_email}</td>
+                        <td className="p-4 font-black text-slate-900 tracking-wider text-sm">{container.id}</td>
+                        <td className="p-4 text-slate-500">{container.owner_email}</td>
                         <td className="p-4">
                           <select
                             value={container.status}
@@ -510,20 +510,20 @@ export default function AdminDashboard() {
                               const { error } = await supabase.from('containers').update(updates).eq('id', container.id);
                               if (error) showToast(`Update failed: ${error.message}`, 'error');
                             }}
-                            className="bg-slate-950 border border-slate-800 text-slate-200 rounded-lg px-2.5 py-1 text-xs font-mono cursor-pointer focus:outline-none focus:border-cyan-400"
+                            className="bg-white border border-slate-200 text-slate-700 rounded-lg px-2.5 py-1 text-xs font-mono cursor-pointer focus:outline-none focus:border-cyan-500"
                           >
                             {STATUS_OPTIONS.map(opt => <option key={opt.value} value={opt.value}>{opt.label}</option>)}
                           </select>
                         </td>
                         <td className="p-4">
-                          <div className="text-slate-300 mb-1">Spent: <span className="font-bold text-white">{metrics.hoursElapsed}h</span></div>
+                          <div className="text-slate-600 mb-1">Spent: <span className="font-bold text-slate-900">{metrics.hoursElapsed}h</span></div>
                           <StatusBadge gateInTime={container.gate_in_time} gateOutTime={container.gate_out_time} status={container.status} />
                         </td>
                         <td className="p-4 font-bold text-sm">
                           {metrics.demurrageFee > 0 && container.status === 'IN_ICD' ? (
-                            <span className="text-rose-400">${metrics.demurrageFee}.00</span>
+                            <span className="text-rose-600">${metrics.demurrageFee}.00</span>
                           ) : (
-                            <span className="text-slate-600">$0.00</span>
+                            <span className="text-slate-300">$0.00</span>
                           )}
                         </td>
                       </tr>
